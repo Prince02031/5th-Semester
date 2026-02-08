@@ -1,0 +1,61 @@
+/* ---------------------------
+           GENERAL NOTE:
+           a:hover MUST come after a:link and a:visited
+           a:active MUST come after a:hover
+           Pseudo-class names are NOT case-sensitive.
+        ---------------------------- */
+
+        /* Example Section Styling */
+        .example-box {
+            margin: 20px 0;
+            padding: 15px;
+            border: 2px solid #ccc;
+            border-radius: 6px;
+        }
+
+        /* 1. :link (unvisited link) */
+        .link-example a:link {
+            color: blue;
+        }
+
+        /* 2. :visited (visited link) */
+        .visited-example a:visited {
+            color: purple;
+        }
+
+        /* 3. :hover (mouse over element) */
+        /* MUST come after :link and :visited */
+        .hover-example a:link,
+        .hover-example a:visited {
+            color: darkgreen;
+        }
+        .hover-example a:hover {
+            color: orange;
+            text-decoration: underline;
+        }
+
+        /* 4. :focus (element focused, usually forms) */
+        .focus-example input {
+            padding: 6px;
+            border: 2px solid #777;
+            border-radius: 5px;
+        }
+        .focus-example input:focus {
+            border-color: dodgerblue;
+            outline: none;
+            background-color: #f0f8ff;
+        }
+
+        /* 5. :active (element being clicked) */
+        /* MUST come after :hover */
+        .active-example a:link,
+        .active-example a:visited {
+            color: crimson;
+        }
+        .active-example a:hover {
+            color: darkred;
+        }
+        .active-example a:active {
+            color: white;
+            background-color: black;
+        }

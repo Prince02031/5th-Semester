@@ -1,0 +1,122 @@
+================================================================================
+    DEADLOCK AVOIDANCE STRATEGIES COMPARISON
+================================================================================
+
+This document explains the two deadlock avoidance strategies implemented in 
+deadlock_demo.c and how they differ.
+
+================================================================================
+1. ORDERED LOCKING (Avoids Circular Wait)
+================================================================================
+
+APPROACH:
+--------
+Both Thread 1 and Thread 2 acquire locks in the SAME ORDER:
+  - First: Lock mutex 1
+  - Then: Lock mutex 2
+
+CODE FLOW:
+----------
+Thread 1:                          Thread 2:
+  1. Lock lock1                      1. Lock lock1
+  2. Sleep 1 second                  2. Sleep 1 second
+  3. Try to lock lock2               3. Try to lock lock2
+  4. Unlock lock2                    4. Unlock lock2
+  5. Unlock lock1                    5. Unlock lock1
+
+WHAT PREVENTS DEADLOCK:
+-----------------------
+Since both threads try to acquire lock1 first, one thread will succeed and the 
+other will wait. The first thread will successfully acquire both locks and then 
+release them. Once the first thread releases lock1, the second thread can 
+proceed. This prevents Circular Wait (one of the 4 necessary conditions for 
+deadlock).
+
+OUTCOME: SUCCESS - Program completes without deadlock
+
+================================================================================
+2. HOLD AND WAIT AVOIDANCE (Acquire All Locks Atomically)
+================================================================================
+
+APPROACH:
+--------
+Each thread acquires ALL required locks before proceeding with any work.
+Once all locks are acquired, the thread holds them until it's done.
+
+CODE FLOW:
+----------
+Thread 1:                          Thread 2:
+  1. Lock lock1                      1. Lock lock1
+  2. Lock lock2                      2. Lock lock2
+  3. Sleep 1 second                  3. Sleep 1 second
+  4. Do work with both locks         4. Do work with both locks
+  5. Unlock lock2                    5. Unlock lock2
+  6. Unlock lock1                    6. Unlock lock1
+
+WHAT PREVENTS DEADLOCK:
+-----------------------
+Both threads acquire lock1 first in the same order. When one thread acquires 
+lock1, the other thread blocks at step 1. Once the first thread acquires both 
+lock1 and lock2, it completes its work and releases both locks. Then the second 
+thread can proceed. This prevents Hold and Wait (another necessary condition for 
+deadlock) because threads don't hold one lock while waiting for another.
+
+OUTCOME: SUCCESS - Program completes without deadlock
+
+================================================================================
+KEY DIFFERENCES
+================================================================================
+
+ASPECT              | ORDERED LOCKING           | HOLD AND WAIT AVOIDANCE
+--------------------|---------------------------|---------------------------
+Lock Acquisition    | Sequential with sleep in  | All locks acquired before
+                    | between                   | any work proceeds
+                    |                           |
+Attacks Condition   | Circular Wait             | Hold and Wait
+                    |                           |
+Resource Idle Time  | Locks held longer due to  | Locks released sooner,
+                    | sleep between lock calls  | better resource efficiency
+                    |                           |
+Thread Progress     | One lock acquired, then   | All needed resources
+                    | waits for next            | secured upfront
+                    |                           |
+Practical Use       | Works well when lock      | Better for minimizing
+                    | ordering is enforced      | lock contention
+                    |                           |
+
+================================================================================
+EXAMPLE: How Deadlock Could Occur (Original Code)
+================================================================================
+
+Thread 1:                          Thread 2:
+  1. Lock lock1 (SUCCESS)            1. Lock lock2 (SUCCESS)
+  2. Sleep 1 second                  2. Sleep 1 second
+  3. Try lock lock2 (WAIT)           3. Try lock lock1 (WAIT)
+     ^                                  ^
+     |                                  |
+     Thread 1 is waiting for lock2   Thread 2 is waiting for lock1
+     held by Thread 2                held by Thread 1
+     
+     *** CIRCULAR WAIT - DEADLOCK! ***
+
+Both threads are blocked forever:
+- Thread 1 holds lock1 but needs lock2 (held by Thread 2)
+- Thread 2 holds lock2 but needs lock1 (held by Thread 1)
+
+================================================================================
+COMPILATION AND EXECUTION
+================================================================================
+
+Compile:
+  gcc deadlock_demo.c -o deadlock -pthread
+
+Run:
+  ./deadlock
+  
+When prompted:
+  - Enter 1 for Ordered Locking
+  - Enter 2 for Hold and Wait Avoidance
+
+Both options will complete successfully without deadlock!
+
+================================================================================

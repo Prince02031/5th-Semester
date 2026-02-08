@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pandamart - foodpanda</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #f8f8f8;
+        }
+
+        .top-header {
+            background-color: white;
+            padding: 12px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            color: #e21b70;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .header-info {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            flex: 1;
+            margin-left: 40px;
+        }
+
+        .address, .time {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .btn-login {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 8px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .btn-signup {
+            background: #e21b70;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .main-header {
+            background: linear-gradient(135deg, #e21b70 0%, #d91a6c 100%);
+            padding: 20px 40px;
+            color: white;
+        }
+
+        .pandamart-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .pandamart-logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .panda {
+            font-weight: 300;
+        }
+
+        .mart {
+            background: white;
+            color: #e21b70;
+            padding: 2px 8px;
+            font-style: italic;
+        }
+
+        .delivery-time {
+            font-size: 14px;
+        }
+
+        .search-bar {
+            background: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            max-width: 1000px;
+        }
+
+        .search-bar input {
+            border: none;
+            outline: none;
+            flex: 1;
+            font-size: 15px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 30px 40px;
+            display: flex;
+            gap: 30px;
+        }
+
+        .main-content {
+            flex: 1;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .view-all {
+            color: #e21b70;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            border-bottom: 2px solid #e21b70;
+            padding-bottom: 2px;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .category-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .category-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .category-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+        }
+
+        .category-name {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            padding: 15px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            font-size: 60px;
+            position: relative;
+        }
+
+        .add-btn {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: white;
+            border: 1px solid #ddd;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 20px;
+            color: #e21b70;
+            transition: all 0.2s;
+        }
+
+        .add-btn:hover {
+            background: #e21b70;
+            color: white;
+            border-color: #e21b70;
+        }
+
+        .price-section {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .current-price {
+            color: #e21b70;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 14px;
+        }
+
+        .discount-badge {
+            background: #ffe8f0;
+            color: #e21b70;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 500;
+        }
+
+        .product-name {
+            font-size: 13px;
+            color: #333;
+            line-height: 1.4;
+            height: 36px;
+            overflow: hidden;
+        }
+
+        .sidebar {
+            width: 320px;
+            position: sticky;
+            top: 20px;
+            height: fit-content;
+        }
+
+        .delivery-options {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .delivery-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tab {
+            flex: 1;
+            text-align: center;
+            padding: 8px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .tab.active {
+            background: #333;
+            color: white;
+        }
+
+        .shop-info-btn {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 10px 20px;
+            border-radius: 8px;
+            width: 100%;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .cart-section {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .cart-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .cart-empty {
+            text-align: center;
+            color: #999;
+            font-size: 14px;
+            padding: 20px 0;
+        }
+
+        .cart-summary {
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+            margin-top: 15px;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .total-row {
+            font-weight: bold;
+            font-size: 16px;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .checkout-btn {
+            width: 100%;
+            background: #e5e5e5;
+            color: #999;
+            border: none;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 500;
+            margin-top: 15px;
+            cursor: not-allowed;
+        }
+
+        .scroll-btn {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: white;
+            border: 1px solid #ddd;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .products-wrapper {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-header">
+        <div class="logo">🍔 foodpanda</div>
+        <div class="header-info">
+            <div class="address">
+                📍 <strong>New address</strong> Road 71 Road 71, Dhaka, Bangladesh Dhaka
+            </div>
+            <div class="time">
+                🕐 <strong>Time Standard</strong>
+            </div>
+        </div>
+        <div class="header-actions">
+            <button class="btn-login">Log in</button>
+            <button class="btn-signup">Sign up for free delivery</button>
+            <span>🌐 EN</span>
+            <span>🛒</span>
+        </div>
+    </div>
+
+    <div class="main-header">
+        <div class="pandamart-title">
+            <div class="pandamart-logo">
+                <span class="panda">panda</span><span class="mart">mart</span>
+            </div>
+            <div class="delivery-time">in 40 minutes</div>
+        </div>
+        <div class="search-bar">
+            <span>🔍</span>
+            <input type="text" placeholder="Search products">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="main-content">
+            <div class="section-header">
+                <h2 class="section-title">All categories</h2>
+                <a href="#" class="view-all">View All (30)</a>
+            </div>
+
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-icon">⚡</div>
+                    <div class="category-name">Flash Deal</div>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🧁</div>
+                    <div class="category-name">New Arrival</div>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🍪</div>
+                    <div class="category-name">Reckitt</div>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🧴</div>
+                    <div class="category-name">Unilever</div>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🍋</div>
+                    <div class="category-name">Fruits</div>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🥕</div>
+                    <div class="category-name">Vegetables</div>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🥩</div>
+                    <div class="category-name">Meat</div>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🧴</div>
+                    <div class="category-name">Tong Dokan</div>
+                </div>
+            </div>
+
+            <div class="section-header">
+                <h2 class="section-title">Hot Deals</h2>
+                <a href="#" class="view-all">View All</a>
+            </div>
+
+            <div class="products-wrapper">
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            🍌
+                            <div class="add-btn">+</div>
+                        </div>
+                        <div class="price-section">
+                            <span class="current-price">Tk 77</span>
+                            <span class="old-price">Tk 85</span>
+                        </div>
+                        <div class="discount-badge">Save Tk8</div>
+                        <div class="product-name">Hanay Premium Banana Sagor Kola...</div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            🍫
+                            <div class="add-btn">+</div>
+                        </div>
+                        <div class="price-section">
+                            <span class="current-price">Tk 9</span>
+                            <span class="old-price">Tk 10</span>
+                        </div>
+                        <div class="discount-badge">10% off</div>
+                        <div class="product-name">Haque Pillow Chocolate Chips 20g</div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            🧂
+                            <div class="add-btn">+</div>
+                        </div>
+                        <div class="price-section">
+                            <span class="current-price">Tk 34</span>
+                            <span class="old-price">Tk 42</span>
+                        </div>
+                        <div class="discount-badge">Save Tk8</div>
+                        <div class="product-name">ACI Pure Salt 1kg</div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            🍪
+                            <div class="add-btn">+</div>
+                        </div>
+                        <div class="price-section">
+                            <span class="current-price">Tk 36</span>
+                            <span class="old-price">Tk 40</span>
+                        </div>
+                        <div class="discount-badge">10% off</div>
+                        <div class="product-name">Haque Chocolate Digestive Biscuit 137g</div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            🍫
+                            <div class="add-btn">+</div>
+                        </div>
+                        <div class="price-section">
+                            <span class="current-price">Tk 45</span>
+                            <span class="old-price">Tk 50</span>
+                        </div>
+                        <div class="discount-badge">10% off</div>
+                        <div class="product-name">Haque Bourbon Chocolate Cream...</div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            🍚
+                            <div class="add-btn">+</div>
+                        </div>
+                        <div class="price-section">
+                            <span class="current-price">Tk 135</span>
+                            <span class="old-price">Tk 155</span>
+                        </div>
+                        <div class="discount-badge">Save Tk20</div>
+                        <div class="product-name">Rupchanda Chinigura Rice 1kg</div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            🍍
+                            <div class="add-btn">+</div>
+                        </div>
+                        <div class="price-section">
+                            <span class="current-price">Tk 31</span>
+                            <span class="old-price">Tk 39</span>
+                        </div>
+                        <div class="discount-badge">Save Tk7</div>
+                        <div class="product-name">brightfarms Pineapple (Cherry...</div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            🍗
+                            <div class="add-btn">+</div>
+                        </div>
+                        <div class="price-section">
+                            <span class="current-price">Tk 285</span>
+                            <span class="old-price">Tk 310</span>
+                        </div>
+                        <div class="discount-badge">Save Tk25</div>
+                        <div class="product-name">Broiler Chicken Fresh Breast Boneless 500...</div>
+                    </div>
+                </div>
+                <button class="scroll-btn">→</button>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <div class="delivery-options">
+                <div class="delivery-tabs">
+                    <div class="tab active">Delivery</div>
+                    <div class="tab">Pick-up</div>
+                </div>
+                <button class="shop-info-btn">Shop information</button>
+            </div>
+
+            <div class="cart-section">
+                <h3 class="cart-title">Your cart</h3>
+                <div class="cart-empty">Start adding items to your cart</div>
+                <div class="cart-summary">
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span>Tk 0</span>
+                    </div>
+                    <div class="summary-row total-row">
+                        <span>Total <small>(incl. fees and tax)</small></span>
+                        <span>Tk 0</span>
+                    </div>
+                    <a href="#" style="font-size: 12px; color: #e21b70; text-decoration: none;">See summary</a>
+                </div>
+                <button class="checkout-btn">Go to checkout</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

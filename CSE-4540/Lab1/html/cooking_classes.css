@@ -1,0 +1,118 @@
+body { 
+    font-family: 'Georgia', serif; 
+    margin: 20px; 
+    background: #fffaf0; 
+}
+.container { 
+    max-width: 1000px; 
+    margin: 0 auto; 
+    background: white; 
+    padding: 25px; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(139,69,19,0.1); 
+    border: 1px solid #deb887; 
+}
+.back-btn { 
+    background: #8b4513; 
+    color: white; 
+    padding: 12px 20px; 
+    text-decoration: none; 
+    border-radius: 8px; 
+    font-weight: bold; 
+    display: inline-block;
+    margin-bottom: 20px;
+}
+.back-btn:hover {
+    background: #a0522d;
+}
+table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    margin: 25px 0; 
+}
+th, td { 
+    border: 2px solid #deb887; 
+    padding: 15px; 
+    text-align: left; 
+    vertical-align: top;
+}
+th { 
+    background: #fdf5e6; 
+    color: #8b4513; 
+    font-weight: bold; 
+}
+tr:nth-child(even) { 
+    background: #fffaf0; 
+}
+h1, h2 { 
+    color: #8b4513; 
+}
+
+/* Pricing Table Specific Styles */
+.pricing-table {
+    background: #faf0e6;
+}
+.pricing-table caption {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #8b4513;
+    margin-bottom: 10px;
+    caption-side: top;
+}
+.package-subtitle {
+    font-size: 0.9em;
+    color: #666;
+    font-style: italic;
+    margin-top: 5px;
+}
+.price {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #8b4513;
+    display: block;
+}
+.price-note {
+    font-size: 0.9em;
+    color: #666;
+}
+.savings {
+    background: #8b4513;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.8em;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 5px;
+}
+.feature-tag {
+    background: #deb887;
+    color: #8b4513;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    display: inline-block;
+    margin: 2px;
+}
+.pricing-table ul {
+    margin: 0;
+    padding-left: 20px;
+}
+.pricing-table li {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+.table-footer {
+    text-align: center;
+    font-size: 0.9em;
+    padding: 10px;
+    background: #fdf5e6;
+    border-radius: 5px;
+}
+
+/* Services Table */
+.services-table td[rowspan] {
+    background: #fdf5e6;
+    font-weight: bold;
+    vertical-align: middle;
+}

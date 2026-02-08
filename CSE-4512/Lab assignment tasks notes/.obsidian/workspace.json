@@ -1,0 +1,222 @@
+{
+  "main": {
+    "id": "09181631ec0f3b34",
+    "type": "split",
+    "children": [
+      {
+        "id": "fcad09ef65ee1d7c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9a7d11eb1aea330a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Welcome.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Welcome"
+            }
+          },
+          {
+            "id": "cf47f82dd94d3671",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Welcome.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Welcome"
+            }
+          },
+          {
+            "id": "bc0b2388191a24c2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Untitled.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Untitled"
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "4bfd9b5554cc9647",
+    "type": "split",
+    "children": [
+      {
+        "id": "7da0a8450babf275",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ab352089e3d17997",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "e80ef23511cdb31e",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "cb7eff0e5dc3a4e0",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "f6ac60cfe9299711",
+    "type": "split",
+    "children": [
+      {
+        "id": "535696379e8e984a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3d68ea1ad40b7d0b",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "LAB 1 FULL NETWORK ARCHIVE CONFIGURATION (LAB 1 EXAMPLE).md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for LAB 1 FULL NETWORK ARCHIVE CONFIGURATION (LAB 1 EXAMPLE)"
+            }
+          },
+          {
+            "id": "dcdf0a9044c43f5a",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "LAB 1 FULL NETWORK ARCHIVE CONFIGURATION (LAB 1 EXAMPLE).md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from LAB 1 FULL NETWORK ARCHIVE CONFIGURATION (LAB 1 EXAMPLE)"
+            }
+          },
+          {
+            "id": "1279d442b889194d",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "2aefdb336e5cd713",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "2412d46806cfc8e2",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "LAB 1 FULL NETWORK ARCHIVE CONFIGURATION (LAB 1 EXAMPLE).md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of LAB 1 FULL NETWORK ARCHIVE CONFIGURATION (LAB 1 EXAMPLE)"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "bc0b2388191a24c2",
+  "lastOpenFiles": [
+    "Welcome.md",
+    "Untitled.md",
+    "LAB 1 FULL NETWORK ARCHIVE CONFIGURATION.md",
+    "LAB 1 FULL NETWORK ARCHIVE CONFIGURATION (LAB 1 EXAMPLE).md"
+  ]
+}

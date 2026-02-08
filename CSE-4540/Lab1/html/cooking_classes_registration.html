@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cooking Classes Registration - Chef Alfi Shahrin</title>
+    <link rel="stylesheet" type="text/css" href="cooking-classes.css">
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-btn">← Back to Kitchen</a>
+
+        <h1>Cooking Class Registration</h1>
+
+        <form class="registration-form" action="#" method="post">
+            <div class="form-section">
+                <h2>Personal Information</h2>
+                
+                <div class="form-group">
+                    <label for="fullname">Full Name *</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" placeholder="01711-266562" required>
+                    <small>Format: 01711-266562</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" id="dob" name="dob">
+                </div>
+
+                <div class="form-group">
+                    <label for="classtype">Preferrable Class Type *</label>
+                    <select id="classtype" name="classtype" required>
+                        <option value="">Select a class type</option>
+                        <option value="italian">Italian Pasta Making</option>
+                        <option value="mediterranean">Mediterranean Diet</option>
+                        <option value="baking">Advanced Baking</option>
+                        <option value="vegan">Vegetarian & Vegan Cooking</option>
+                        <option value="pastry">Baking & Pastry Arts</option>
+                        <option value="fusion">International Cuisine Fusion</option>
+                        <option value="wine">Wine Pairing & Tasting</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="participants">Number of Participants *</label>
+                    <input type="number" id="participants" name="participants" min="1" max="8" value="1" required>
+                    <small>Maximum 8 participants per session</small>
+                </div>
+            </div>
+            <div class="form-section">
+                <h2>Dietary Preferences & Experience</h2>
+                <div class="form-group">
+                    <label>Dietary Restrictions</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="dietary" value="vegetarian"> Vegetarian</label>
+                        <label><input type="checkbox" name="dietary" value="vegan"> Vegan</label>
+                        <label><input type="checkbox" name="dietary" value="gluten-free"> Gluten-Free</label>
+                        <label><input type="checkbox" name="dietary" value="nut-free"> Nut-Free</label>
+                        <label><input type="checkbox" name="dietary" value="dairy-free"> Dairy-Free</label>
+                        <label><input type="checkbox" name="dietary" value="none"> None</label>
+                    </div>
+                </div>
+                    <div class="form-group">
+                    <label> Cooking Experience Level *</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="experience" value="beginner" required> Beginner </label>
+                        <label class="radio-label"> <input type="radio" name="experience" value="intermediate"> Intermediate </label>
+                        <label class="radio-label">
+                            <input type="radio" name="experience" value="advanced"> Advanced </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="allergies">Specific Allergies or Concerns</label>
+                    <textarea id="allergies" name="allergies" rows="4" placeholder="List any specific food allergies, dietary concerns, or special requirements..."></textarea>
+                    <small>Maximum 200 characters</small>
+                </div>
+
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="newsletter" value="yes">
+                        Subscribe to cooking tips and class updates
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="terms" value="agreed" required>
+                        I agree to the terms and conditions and understand the cancellation policy *
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="submit-btn">Register for Class</button>
+                <button type="reset" class="reset-btn">Clear Form</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

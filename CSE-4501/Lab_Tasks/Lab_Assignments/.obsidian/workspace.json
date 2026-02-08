@@ -1,0 +1,193 @@
+{
+  "main": {
+    "id": "37bf5ae74e8f404b",
+    "type": "split",
+    "children": [
+      {
+        "id": "aa90fb6a40758504",
+        "type": "tabs",
+        "dimension": 99.99999999999999,
+        "children": [
+          {
+            "id": "61adaa0cc1aa69b5",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "e21ad8f37e2f97df",
+    "type": "split",
+    "children": [
+      {
+        "id": "b39f3d50a730ca45",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a06c955c8531949a",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "77fc4671b0ab22e9",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "b7cdc79f818267cd",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "edf1ce25d5352879",
+    "type": "split",
+    "children": [
+      {
+        "id": "fa5d05514d35e25c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "df31c683c0d9e088",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Lab 2- Linux Assignment.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Lab 2- Linux Assignment"
+            }
+          },
+          {
+            "id": "9b1b1f422343ec48",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Lab 2- Linux Assignment.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Lab 2- Linux Assignment"
+            }
+          },
+          {
+            "id": "b49dad01e6d13bb1",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "73d286f9a43e1b71",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "080201520653404f",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Lab 2- Linux Assignment.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Lab 2- Linux Assignment"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "61adaa0cc1aa69b5",
+  "lastOpenFiles": [
+    "Untitled.canvas",
+    "Untitled.base",
+    "Lab 2- Linux Assignment.md",
+    "write this in an editor (1).pdf",
+    "OS(CSE) - Lab 2 Assignment.pdf",
+    "Screenshot 2025-11-28 203655-imageonline.co-merged.png",
+    "Welcome.md"
+  ]
+}

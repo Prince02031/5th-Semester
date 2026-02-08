@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pseudo-class Examples</title>
+    <link rel="stylesheet" href="Pseudo-class.css">
+</head>
+<body>
+
+<h1>CSS Pseudo-class Examples</h1>
+
+<p>
+A **pseudo-class** is a keyword added to a selector that specifies a special state of an element.  
+Examples include when a link is hovered, clicked, visited, or when an input is focused. </p>
+
+<p>
+Remember:
+<b>a:hover</b> must come after <b>a:link</b> and <b>a:visited</b>,  
+and <b>a:active</b> must come after <b>a:hover</b>.  
+Pseudo-class names are not case-sensitive.
+</p>
+
+<!-- Example 1: :link -->
+<div class="example-box link-example">
+    <h3>1. :link — Unvisited Link</h3>
+    <p>Unvisited links appear blue:</p>
+    <a href="https://example.com" target="_blank">Visit Example.com</a>
+</div>
+
+<!-- Example 2: :visited -->
+<div class="example-box visited-example">
+    <h3>2. :visited — Visited Link</h3>
+    <p>After clicking this once, the link will appear purple:</p>
+    <a href="https://google.com" target="_blank">Go to Google</a>
+</div>
+
+<!-- Example 3: :hover -->
+<div class="example-box hover-example">
+    <h3>3. :hover — Mouse Hover</h3>
+    <p>Hover to see the color change:</p>
+    <a href="#">Hover Over This Link</a>
+</div>
+
+<!-- Example 4: :focus -->
+<div class="example-box focus-example">
+    <h3>4. :focus — Input Focus</h3>
+    <p>Click inside the textbox to see focus effect:</p>
+    <input type="text" placeholder="Click here..." />
+</div>
+
+<!-- Example 5: :active -->
+<div class="example-box active-example">
+    <h3>5. :active — While Clicked</h3>
+    <p>Click and hold to trigger :active:</p>
+    <a href="#">Click Me</a>
+</div>
+
+</body>
+</html>

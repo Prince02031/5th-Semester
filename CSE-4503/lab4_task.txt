@@ -1,0 +1,95 @@
+org 100h
+
+.DATA
+ARR     db 1,2,3,4,5,6,7,8,9      ; 1-D array (byte) for numbers 1..9
+RESULT  dw 0000h                  ; must be WORD because max is 285
+msg1    db 'Enter N (2-9): $'
+msg2    db 0Dh,0Ah,'The result is: $'
+
+.CODE
+MAIN PROC
+    mov ax, @DATA
+    mov ds, ax
+
+    ; ---- Show input prompt ----
+    lea dx, msg1
+    mov ah, 09h
+    int 21h
+
+    ; ---- Take single ASCII input ----
+    mov ah, 01h
+    int 21h                ; AL = ASCII character of N
+    sub al, '0'            ; convert ASCII -> decimal (2..9)
+
+    xor cx, cx
+    mov cl, al             ; CX = N (loop counter)
+
+    ; ---- Sum squares using ARRAY + LOOP ----
+    lea si, ARR            ; SI points to start of array
+    xor bx, bx             ; BX = sum = 0
+
+L1:
+    mov al, [si]           ; AL = ARR[i]
+    mul al                 ; AX = AL * AL (square)
+    add bx, ax             ; sum += square
+    inc si                 ; move to next array element
+    loop L1
+
+    mov RESULT, bx         ; store final answer in RESULT
+
+    ; ---- Print "The result is: " ----
+    lea dx, msg2
+    mov ah, 09h
+    int 21h
+
+    ; ---- Print RESULT in decimal (0..285) ----
+    mov ax, RESULT
+    call PRINT_NUM
+
+    ret
+MAIN ENDP
+
+; -------------------------------
+; PRINT_NUM: prints AX as unsigned decimal using int 21h / AH=02h
+; -------------------------------
+PRINT_NUM PROC
+    push ax
+    push bx
+    push cx
+    push dx
+
+    cmp ax, 0
+    jne PN_START
+    mov dl, '0'
+    mov ah, 02h
+    int 21h
+    jmp PN_DONE
+
+PN_START:
+    xor cx, cx            ; digit count = 0
+    mov bx, 10
+
+PN_DIV:
+    xor dx, dx
+    div bx                ; AX = AX/10, DX = remainder
+    push dx               ; store remainder (digit)
+    inc cx
+    cmp ax, 0
+    jne PN_DIV
+
+PN_PRINT:
+    pop dx
+    add dl, '0'
+    mov ah, 02h
+    int 21h
+    loop PN_PRINT
+
+PN_DONE:
+    pop dx
+    pop cx
+    pop bx
+    pop ax
+    ret
+PRINT_NUM ENDP
+
+END MAIN
