@@ -1,0 +1,9 @@
+2026-03-05 11:25:02 startup
+2026-03-05 11:44:44 connect:('10.204.122.158', 56798)
+2026-03-05 11:46:46 forwarded message from ('10.204.122.158', 56798) 
+2026-03-05 11:47:27 forwarded message from ('10.204.122.158', 56798) 
+2026-03-05 11:51:26 forwarded message from ('10.204.122.158', 56798) 
+2026-03-05 11:53:38 socket error with ('10.204.122.158', 56798): [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-03-05 11:53:38 disconnect: ('10.204.122.158', 56798)
+2026-03-05 11:53:44 connect:('127.0.0.1', 57771)
+2026-03-05 11:53:49 forwarded message from ('127.0.0.1', 57771) 

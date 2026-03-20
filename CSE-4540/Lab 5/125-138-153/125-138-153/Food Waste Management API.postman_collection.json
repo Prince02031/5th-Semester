@@ -1,0 +1,883 @@
+{
+  "info": {
+    "_postman_id": "d82866ee-d9d1-4fa3-b027-33eedebfe5ac",
+    "name": "Food Waste Management API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52001351"
+  },
+  "item": [
+    {
+      "name": "Users API",
+      "item": [
+        {
+          "name": "Create User",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Alice Johnson\",\r\n  \"location\": \"New York\",\r\n  \"householdSize\": 3,\r\n  \"dietaryPreferences\": [\"Vegetarian\", \"Organic\"],\r\n  \"dietaryRestrictions\": [\"Gluten-Free\"],\r\n  \"height\": 165,\r\n  \"weight\": 60,\r\n  \"age\": 28\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/users",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get User by ID",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Alice Johnson\",\r\n  \"location\": \"New York\",\r\n  \"householdSize\": 3,\r\n  \"dietaryPreferences\": [\"Vegetarian\", \"Organic\"],\r\n  \"dietaryRestrictions\": [\"Gluten-Free\"],\r\n  \"height\": 165,\r\n  \"weight\": 60,\r\n  \"age\": 28\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/users/697f5376cd2fe193b8919386",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "users",
+                "697f5376cd2fe193b8919386"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Users",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Alice Johnson\",\r\n  \"location\": \"New York\",\r\n  \"householdSize\": 3,\r\n  \"dietaryPreferences\": [\"Vegetarian\", \"Organic\"],\r\n  \"dietaryRestrictions\": [\"Gluten-Free\"],\r\n  \"height\": 165,\r\n  \"weight\": 60,\r\n  \"age\": 28\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/users ",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "users "
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update User",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Alice Johnson Updated\",\r\n  \"weight\": 62\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/users/697f5376cd2fe193b8919386",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "users",
+                "697f5376cd2fe193b8919386"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete User",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Alice Johnson Updated\",\r\n  \"weight\": 62\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/users/697f5376cd2fe193b8919386",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "users",
+                "697f5376cd2fe193b8919386"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Grocery Items API",
+      "item": [
+        {
+          "name": "Create Grocery Item",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Fresh Milk\",\r\n  \"category\": \"Dairy\",\r\n  \"quantity\": 2,\r\n  \"unit\": \"liters\",\r\n  \"purchaseDate\": \"2026-02-01\",\r\n  \"expiryDate\": \"2026-02-08\",\r\n  \"storageType\": \"Refrigerator\",\r\n  \"consumptionCount\": 0,\r\n  \"status\": \"Available\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/grocery-items",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "grocery-items"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Grocery Items",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Fresh Milk\",\r\n  \"category\": \"Dairy\",\r\n  \"quantity\": 2,\r\n  \"unit\": \"liters\",\r\n  \"purchaseDate\": \"2026-02-01\",\r\n  \"expiryDate\": \"2026-02-08\",\r\n  \"storageType\": \"Refrigerator\",\r\n  \"consumptionCount\": 0,\r\n  \"status\": \"Available\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/grocery-items",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "grocery-items"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Grocery Item by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/grocery-items/697f56bacd2fe193b8919390",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "grocery-items",
+                "697f56bacd2fe193b8919390"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Grocery Item",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"quantity\": 1.5,\r\n  \"status\": \"Partially Used\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/grocery-items/697f56bacd2fe193b8919390",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "grocery-items",
+                "697f56bacd2fe193b8919390"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Grocery Item",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"quantity\": 1.5,\r\n  \"status\": \"Partially Used\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/grocery-items/697f56bacd2fe193b8919390",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "grocery-items",
+                "697f56bacd2fe193b8919390"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Nutrition Info API",
+      "item": [
+        {
+          "name": "Create Nutrition Info",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"foodName\": \"Mango\",\r\n  \"caloriesPerUnit\": 105,\r\n  \"protein\": 1.3,\r\n  \"carbs\": 27,\r\n  \"fat\": 0.3,\r\n  \"restrictedFor\": [\"Low-Carb Diet\"]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/nutrition-info",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "nutrition-info"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Nutrition Info",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Fresh Milk\",\r\n  \"category\": \"Dairy\",\r\n  \"quantity\": 2,\r\n  \"unit\": \"liters\",\r\n  \"purchaseDate\": \"2026-02-01\",\r\n  \"expiryDate\": \"2026-02-08\",\r\n  \"storageType\": \"Refrigerator\",\r\n  \"consumptionCount\": 0,\r\n  \"status\": \"Available\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/nutrition-info",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "nutrition-info"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/nutrition-info/697f5a5ecd2fe193b891939f",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "nutrition-info",
+                "697f5a5ecd2fe193b891939f"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Nutrition Info",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"caloriesPerUnit\": 120,\r\n  \"protein\": 1.6,\r\n  \"carbs\": 40,\r\n  \"fat\": 0.5\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/nutrition-info/697f5a5ecd2fe193b891939f",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "nutrition-info",
+                "697f5a5ecd2fe193b891939f"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Nutrition Info",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"quantity\": 1.5,\r\n  \"status\": \"Partially Used\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/nutrition-info/697f5a5ecd2fe193b891939f",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "nutrition-info",
+                "697f5a5ecd2fe193b891939f"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Meals API",
+      "item": [
+        {
+          "name": "Create",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Breakfast Smoothie\",\r\n  \"ingredients\": [\"697f5966cd2fe193b891939a\", \"697f5be9cd2fe193b89193a6\"],\r\n  \"mealType\": \"Breakfast\",\r\n  \"plannedDate\": \"2026-02-02\",\r\n  \"totalCalories\": 250,\r\n  \"cooked\": false\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/meals",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "meals"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Fresh Milk\",\r\n  \"category\": \"Dairy\",\r\n  \"quantity\": 2,\r\n  \"unit\": \"liters\",\r\n  \"purchaseDate\": \"2026-02-01\",\r\n  \"expiryDate\": \"2026-02-08\",\r\n  \"storageType\": \"Refrigerator\",\r\n  \"consumptionCount\": 0,\r\n  \"status\": \"Available\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/meals",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "meals"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/meals/697f5c43cd2fe193b89193a9",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "meals",
+                "697f5c43cd2fe193b89193a9"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"totalCalories\": 190\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/meals/697f5c43cd2fe193b89193a9",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "meals",
+                "697f5c43cd2fe193b89193a9"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"quantity\": 1.5,\r\n  \"status\": \"Partially Used\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/meals/697f5c43cd2fe193b89193a9",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "meals",
+                "697f5c43cd2fe193b89193a9"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Waste Logs API",
+      "item": [
+        {
+          "name": "Create",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"groceryItem\": \"697f5be9cd2fe193b89193a6\",\r\n  \"wastedQuantity\": 0.5,\r\n  \"reason\": \"Spoiled\",\r\n  \"date\": \"2026-02-01\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/waste-logs",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "waste-logs"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Fresh Milk\",\r\n  \"category\": \"Dairy\",\r\n  \"quantity\": 2,\r\n  \"unit\": \"liters\",\r\n  \"purchaseDate\": \"2026-02-01\",\r\n  \"expiryDate\": \"2026-02-08\",\r\n  \"storageType\": \"Refrigerator\",\r\n  \"consumptionCount\": 0,\r\n  \"status\": \"Available\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/waste-logs",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "waste-logs"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/waste-logs/697f5e9dcd2fe193b89193b2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "waste-logs",
+                "697f5e9dcd2fe193b89193b2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"wastedQuantity\": 0.9,\r\n  \"date\": \"2026-02-03\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/waste-logs/697f5e9dcd2fe193b89193b2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "waste-logs",
+                "697f5e9dcd2fe193b89193b2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"quantity\": 1.5,\r\n  \"status\": \"Partially Used\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/waste-logs/697f5e9dcd2fe193b89193b2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "waste-logs",
+                "697f5e9dcd2fe193b89193b2"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Daily Nutrition Logs API",
+      "item": [
+        {
+          "name": "Create",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"user\": \"697f5f96cd2fe193b89193bc\",\r\n  \"date\": \"2026-02-01\",\r\n  \"totalCaloriesPlanned\": 2000,\r\n  \"meals\": [\"697f5fe2cd2fe193b89193be\"],\r\n  \"metCalorieTarget\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/daily-nutrition-logs",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "daily-nutrition-logs"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Fresh Milk\",\r\n  \"category\": \"Dairy\",\r\n  \"quantity\": 2,\r\n  \"unit\": \"liters\",\r\n  \"purchaseDate\": \"2026-02-01\",\r\n  \"expiryDate\": \"2026-02-08\",\r\n  \"storageType\": \"Refrigerator\",\r\n  \"consumptionCount\": 0,\r\n  \"status\": \"Available\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/daily-nutrition-logs",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "daily-nutrition-logs"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/daily-nutrition-logs/697f5ffbcd2fe193b89193c0",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "daily-nutrition-logs",
+                "697f5ffbcd2fe193b89193c0"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"date\": \"2026-02-05\",\r\n  \"totalCaloriesPlanned\": 2690\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/daily-nutrition-logs/697f5ffbcd2fe193b89193c0",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "daily-nutrition-logs",
+                "697f5ffbcd2fe193b89193c0"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"quantity\": 1.5,\r\n  \"status\": \"Partially Used\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/daily-nutrition-logs/697f5ffbcd2fe193b89193c0",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "daily-nutrition-logs",
+                "697f5ffbcd2fe193b89193c0"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": ""
+    },
+    {
+      "key": "user_id",
+      "value": ""
+    },
+    {
+      "key": "grocery_id",
+      "value": "",
+      "type": "default"
+    },
+    {
+      "key": "meal_id",
+      "value": "",
+      "type": "default"
+    }
+  ]
+}
